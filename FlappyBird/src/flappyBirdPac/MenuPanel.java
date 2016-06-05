@@ -37,7 +37,7 @@ public class MenuPanel extends JPanel {
 	private void LoadImage() {
 		
 		try{
-			img = ImageIO.read(new File("C:/Users/Piotr/Desktop/FlappyBird/FlappyBird/Images/menuPanel.png"));
+			img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/menuPanel.png"));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
