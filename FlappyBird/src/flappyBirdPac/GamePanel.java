@@ -18,6 +18,8 @@ public class GamePanel extends JPanel {
 	private int xCoor=0;
 	private BufferedImage img;
 	
+	BirdImage bi = new BirdImage();
+	
 	public GamePanel(){
 		LoadImage();
 	}
@@ -37,6 +39,8 @@ public class GamePanel extends JPanel {
 		super.paint(g);
 		
 		g.drawImage(img, xCoor, 0, null);
+		
+		bi.drawBird(g);
 	}
 
 }
