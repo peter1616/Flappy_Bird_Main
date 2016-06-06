@@ -13,6 +13,9 @@ public class BirdImage {
 	public static int x = (GamePanel.WIDTH/2)-bird_dia/2;
 	public static int y = GamePanel.HEIGHT/2;
 	
+	private static int speed = 2;
+	private int acce = 1;
+	
 	
 	public BirdImage(){
 		LoadImage();
@@ -31,5 +34,13 @@ public class BirdImage {
 	public void drawBird(Graphics g){
 		
 		g.drawImage(img, x, y, null);
+	}
+	
+	public void birdMovement(){
+		
+		if(y>=0 && y<=GamePanel.HEIGHT){
+			speed += acce;
+			y+= speed;
+		}
 	}
 }
