@@ -20,6 +20,9 @@ public class GamePanel extends JPanel {
 	
 	BirdImage bi = new BirdImage();
 	
+	WallImage wi = new WallImage(GamePanel.WIDTH);
+	WallImage wi2 = new WallImage(GamePanel.WIDTH+(GamePanel.WIDTH/2));
+	
 	public GamePanel(){
 		LoadImage();
 	}
@@ -41,6 +44,8 @@ public class GamePanel extends JPanel {
 		g.drawImage(img, xCoor, 0, null);
 		
 		bi.drawBird(g);
+		wi.drawWall(g);
+		wi2.drawWall(g);
 	}
 
 }
