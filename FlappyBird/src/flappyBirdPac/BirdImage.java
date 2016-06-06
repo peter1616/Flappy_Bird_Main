@@ -41,6 +41,18 @@ public class BirdImage {
 		if(y>=0 && y<=GamePanel.HEIGHT){
 			speed += acce;
 			y+= speed;
+		}else{
+			reset();
 		}
+	}
+
+	public void goUpwards(){
+		speed = -17;
+	}
+	
+	private void reset() {
+		speed = 2;
+		y = GamePanel.HEIGHT/2;
+		
 	}
 }

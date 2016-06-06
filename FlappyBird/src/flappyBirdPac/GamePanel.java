@@ -1,6 +1,8 @@
 package flappyBirdPac;
 
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -25,6 +27,14 @@ public class GamePanel extends JPanel {
 	
 	public GamePanel(){
 		LoadImage();
+		this.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mousePressed(e);
+				bi.goUpwards();
+			}
+		});
 	}
 
 	private void LoadImage() {
