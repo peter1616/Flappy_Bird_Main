@@ -16,6 +16,8 @@ public class WallImage {
 	private int height = GamePanel.HEIGHT-Y;
 	private int gap = 200;
 	
+	public int speed = -6;
+	
 	private BufferedImage img = null;
 	
 	public WallImage(int X){
@@ -39,5 +41,13 @@ public class WallImage {
 		g.drawImage(img, X, Y, null);
 		g.drawImage(img, X, (-GamePanel.HEIGHT)+(Y-gap), null);
 	}
-
+	public void wallMovement(){
+		X+= speed;
+		
+		if(X<=-width_Wall){
+			X = GamePanel.WIDTH;
+			Y = r.nextInt(GamePanel.HEIGHT-400)+200;
+			height = GamePanel.HEIGHT-Y;
+		}
+	}
 }
