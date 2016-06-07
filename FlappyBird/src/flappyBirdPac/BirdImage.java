@@ -1,6 +1,7 @@
 package flappyBirdPac;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -50,9 +51,13 @@ public class BirdImage {
 		speed = -17;
 	}
 	
-	private void reset() {
+	public static void reset() {
 		speed = 2;
 		y = GamePanel.HEIGHT/2;
 		
+	}
+	public static Rectangle getBirdRect(){
+		Rectangle birdRect = new Rectangle(x,y,bird_dia,35);
+		return birdRect;
 	}
 }

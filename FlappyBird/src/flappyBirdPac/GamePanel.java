@@ -59,8 +59,8 @@ public class GamePanel extends JPanel {
 	}
 	public void Move(){
 		bi.birdMovement();
-		//wi.wallMovement();
-		//wi2.wallMovement();
+		wi.wallMovement();
+		wi2.wallMovement();
 	}
 
 }

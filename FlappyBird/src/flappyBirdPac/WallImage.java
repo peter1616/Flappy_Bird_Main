@@ -1,6 +1,7 @@
 package flappyBirdPac;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Random;
@@ -49,5 +50,19 @@ public class WallImage {
 			Y = r.nextInt(GamePanel.HEIGHT-400)+200;
 			height = GamePanel.HEIGHT-Y;
 		}
+		Rectangle lowerRect = new Rectangle(X,Y,width_Wall,height);
+		Rectangle upperRect = new Rectangle(X,0,width_Wall,GamePanel.HEIGHT-(height+gap));
+		
+		if(lowerRect.intersects(BirdImage.getBirdRect())||upperRect.intersects(BirdImage.getBirdRect())){
+			
+			BirdImage.reset();
+			wall_Reset();
+		}
+	}
+
+	private void wall_Reset() {
+		
+		Y = r.nextInt(GamePanel.HEIGHT-400)+200;
+		height = GamePanel.HEIGHT-Y;
 	}
 }
