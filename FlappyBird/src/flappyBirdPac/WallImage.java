@@ -64,5 +64,6 @@ public class WallImage {
 		
 		Y = r.nextInt(GamePanel.HEIGHT-400)+200;
 		height = GamePanel.HEIGHT-Y;
+		GamePanel.GameOver = true;
 	}
 }

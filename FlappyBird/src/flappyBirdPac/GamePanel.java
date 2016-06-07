@@ -14,6 +14,9 @@ public class GamePanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public static boolean GameOver = false;
+	
 	public static final int WIDTH=600;
 	public static final int HEIGHT=800;
 	
@@ -61,6 +64,12 @@ public class GamePanel extends JPanel {
 		bi.birdMovement();
 		wi.wallMovement();
 		wi2.wallMovement();
+		
+		if(GameOver){
+			wi.X = GamePanel.WIDTH;
+			wi2.X = GamePanel.WIDTH+(GamePanel.WIDTH/2);
+			GameOver = false;
+		}
 	}
 
 }
