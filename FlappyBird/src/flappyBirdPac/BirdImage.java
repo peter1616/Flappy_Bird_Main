@@ -54,6 +54,7 @@ public class BirdImage {
 	public static void reset() {
 		speed = 2;
 		y = GamePanel.HEIGHT/2;
+		GamePanel.GameOver = true;
 		
 	}
 	public static Rectangle getBirdRect(){

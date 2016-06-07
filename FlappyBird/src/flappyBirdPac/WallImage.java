@@ -17,7 +17,7 @@ public class WallImage {
 	private int height = GamePanel.HEIGHT-Y;
 	private int gap = 200;
 	
-	public int speed = -6;
+	public static int speed = -6;
 	
 	private BufferedImage img = null;
 	
@@ -55,6 +55,11 @@ public class WallImage {
 		
 		if(lowerRect.intersects(BirdImage.getBirdRect())||upperRect.intersects(BirdImage.getBirdRect())){
 			
+			try{
+				Thread.sleep(500);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
 			BirdImage.reset();
 			wall_Reset();
 		}

@@ -55,6 +55,7 @@ public class GamePanel extends JPanel {
 		super.paint(g);
 		
 		g.drawImage(img, xCoor, 0, null);
+		g.drawImage(img, xCoor+2400, 0, null);
 		
 		bi.drawBird(g);
 		wi.drawWall(g);
@@ -69,6 +70,11 @@ public class GamePanel extends JPanel {
 			wi.X = GamePanel.WIDTH;
 			wi2.X = GamePanel.WIDTH+(GamePanel.WIDTH/2);
 			GameOver = false;
+		}
+		xCoor += WallImage.speed;
+		
+		if(xCoor == -2400){
+			xCoor = 0;
 		}
 	}
 
