@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class BirdImage {
 	
 	private BufferedImage img = null;
-	private static int bird_dia = 40;
+	private static int bird_dia = 36;
 	public static int x = (GamePanel.WIDTH/2)-bird_dia/2;
 	public static int y = GamePanel.HEIGHT/2;
 	
@@ -55,6 +55,7 @@ public class BirdImage {
 		speed = 2;
 		y = GamePanel.HEIGHT/2;
 		GamePanel.GameOver = true;
+		GamePanel.score = 0;
 		
 	}
 	public static Rectangle getBirdRect(){

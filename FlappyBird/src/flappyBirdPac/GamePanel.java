@@ -1,5 +1,6 @@
 package flappyBirdPac;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,6 +17,7 @@ public class GamePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	public static boolean GameOver = false;
+	public static int score = 0;
 	
 	public static final int WIDTH=600;
 	public static final int HEIGHT=800;
@@ -60,6 +62,9 @@ public class GamePanel extends JPanel {
 		bi.drawBird(g);
 		wi.drawWall(g);
 		wi2.drawWall(g);
+		
+		g.setFont(new Font("Tahoma",Font.BOLD,40));
+		g.drawString("Score "+score, WIDTH/2, 100);
 	}
 	public void Move(){
 		bi.birdMovement();
@@ -75,6 +80,11 @@ public class GamePanel extends JPanel {
 		
 		if(xCoor == -2400){
 			xCoor = 0;
+		}
+		System.out.println(wi.X+"->" + BirdImage.x +"     :      "+ wi2.X + "->" + BirdImage.x);
+		if(wi.X == BirdImage.x || wi2.X ==BirdImage.x){
+			score += 1;
+			
 		}
 	}
 
