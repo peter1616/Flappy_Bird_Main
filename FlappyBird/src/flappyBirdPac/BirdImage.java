@@ -27,7 +27,8 @@ public class BirdImage {
 	private void LoadImage() {
 		
 		try{
-			img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/Bird.png"));
+			//img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/Bird.png"));
+			img = ImageIO.read(new File("Images/Bird.png"));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}

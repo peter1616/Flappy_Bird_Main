@@ -48,7 +48,8 @@ public class GamePanel extends JPanel {
 	private void LoadImage() {
 		
 		try{
-			img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/gamePanel.png"));
+			//img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/gamePanel.png"));
+			img = ImageIO.read(new File("Images/gamePanel.png"));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}

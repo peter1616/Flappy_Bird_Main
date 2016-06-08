@@ -31,7 +31,8 @@ public class WallImage {
 
 	private void LoadImage() {
 		try{
-			img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/Wall.png"));
+			//img = ImageIO.read(new File("C:/Users/Piotr/git1/FlappyBird/Images/Wall.png"));
+			img = ImageIO.read(new File("Images/Wall.png"));
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
