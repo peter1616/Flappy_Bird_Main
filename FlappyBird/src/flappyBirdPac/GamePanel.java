@@ -19,6 +19,8 @@ public class GamePanel extends JPanel {
 	
 	public static boolean GameOver = false;
 	public static int score = 0;
+	public static boolean starting = false;
+	public static int proceed = -1;
 	
 	public static final int WIDTH=600;
 	public static final int HEIGHT=800;
@@ -66,6 +68,11 @@ public class GamePanel extends JPanel {
 		
 		g.setFont(new Font("Tahoma",Font.BOLD,40));
 		g.drawString("Score: "+score, WIDTH/2, 100);
+		
+		if(starting){
+			g.setFont(new Font("Tahoma",Font.BOLD,150));
+			g.drawString(Integer.toString(proceed), WIDTH/2-75, 250);
+		}
 	}
 	public void Move(){
 		bi.birdMovement();

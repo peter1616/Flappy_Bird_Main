@@ -8,7 +8,8 @@ import javax.swing.Timer;
 public class MainBird {
 
 	private static JFrame window;
-	public static Timer timer;
+	public static Timer timer,timer2;
+	private int proceed=4;
 	
 	private MainBird() {
 		window = new JFrame();
@@ -49,8 +50,24 @@ public class MainBird {
 		gp.setVisible(true);
 		window.revalidate();
 		
-		timer.start();
-		
+		//timer.start();
+		timer2 = new Timer(1000, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				proceed--;
+				GamePanel.proceed = proceed;
+				GamePanel.starting = true;
+				gp.repaint();
+				if(proceed == 0){
+					timer2.stop();
+					timer.start();
+					GamePanel.starting=false;
+				}
+			}
+		});
+		timer2.start();
 	}
 	public static JFrame getWindow(){
 		return window;
