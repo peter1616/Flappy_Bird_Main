@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 
 public class BirdImage {
 	
@@ -43,7 +44,23 @@ public class BirdImage {
 			speed += acce;
 			y+= speed;
 		}else{
-			reset();
+boolean option = GamePanel.popUpMessage();
+			
+			if(option){
+				try{
+					Thread.sleep(500);
+				}catch(Exception ex){
+					ex.printStackTrace();
+				}
+				reset();
+			}else{
+				//close window
+				JFrame frame = MainBird.getWindow();
+				frame.dispose();
+				MainBird.timer.stop();
+			}
+			
+			
 		}
 	}
 

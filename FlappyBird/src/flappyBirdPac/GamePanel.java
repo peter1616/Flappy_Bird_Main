@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GamePanel extends JPanel {
@@ -64,7 +65,7 @@ public class GamePanel extends JPanel {
 		wi2.drawWall(g);
 		
 		g.setFont(new Font("Tahoma",Font.BOLD,40));
-		g.drawString("Score "+score, WIDTH/2, 100);
+		g.drawString("Score: "+score, WIDTH/2, 100);
 	}
 	public void Move(){
 		bi.birdMovement();
@@ -81,11 +82,19 @@ public class GamePanel extends JPanel {
 		if(xCoor == -2400){
 			xCoor = 0;
 		}
-		System.out.println(wi.X+"->" + BirdImage.x +"     :      "+ wi2.X + "->" + BirdImage.x);
+		//System.out.println(wi.X+"->" + BirdImage.x +"     :      "+ wi2.X + "->" + BirdImage.x);
 		if(wi.X == BirdImage.x || wi2.X ==BirdImage.x){
 			score += 1;
 			
 		}
 	}
-
+	public static Boolean popUpMessage(){
+		int result = JOptionPane.showConfirmDialog(null, "Game Over, Your score is: "+score+"\n Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION);
+		
+		if(result == JOptionPane.YES_OPTION){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

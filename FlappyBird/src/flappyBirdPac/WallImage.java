@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 
 public class WallImage {
 	
@@ -55,13 +56,23 @@ public class WallImage {
 		
 		if(lowerRect.intersects(BirdImage.getBirdRect())||upperRect.intersects(BirdImage.getBirdRect())){
 			
-			try{
-				Thread.sleep(500);
-			}catch(Exception ex){
-				ex.printStackTrace();
+			boolean option = GamePanel.popUpMessage();
+			
+			if(option){
+				try{
+					Thread.sleep(500);
+				}catch(Exception ex){
+					ex.printStackTrace();
+				}
+				BirdImage.reset();
+				wall_Reset();
+			}else{
+				//close window
+				JFrame frame = MainBird.getWindow();
+				frame.dispose();
+				MainBird.timer.stop();
 			}
-			BirdImage.reset();
-			wall_Reset();
+		
 		}
 	}
 

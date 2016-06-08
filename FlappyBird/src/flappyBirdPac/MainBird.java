@@ -7,8 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 public class MainBird {
 
-	private JFrame window;
-	private Timer timer;
+	private static JFrame window;
+	public static Timer timer;
 	
 	private MainBird() {
 		window = new JFrame();
@@ -51,6 +51,9 @@ public class MainBird {
 		
 		timer.start();
 		
+	}
+	public static JFrame getWindow(){
+		return window;
 	}
 	
 	public static void main(String[] args) {
